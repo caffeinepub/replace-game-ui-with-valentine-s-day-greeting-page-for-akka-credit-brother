@@ -1,33 +1,57 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T02:42:38.740Z",
-  "summary": "REQ-18 appears implemented by setting the puzzle’s rendered text constant to “Love you akka 💖” in the jigsaw component. REQ-19 and REQ-20 cannot be fully verified from the truncated diff, though the file summary claims pointer-event based drag support, snapping, and unchanged reveal behavior.",
+  "generatedAt": "2026-02-14T18:56:13.456Z",
+  "summary": "The diff primarily updates documentation/state files (DEPLOYMENT.md, LIVE_URL.md, project_state.json) and a frontend file summary. It does not provide evidence of an actual successful Internet Computer deployment, nor of updating the backend live-URL reference. It also introduces substantial new/changed frontend feature descriptions (games/UI) in the summaries, which conflicts with the “deployment-only, no feature changes” constraint.",
   "missing_requirements": [
     {
-      "id": "REQ-19",
-      "requirement": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices, including preventing page scroll during drag and keeping snap-to-slot behavior.",
-      "reason": "The core interaction logic (pointer/touch handlers, preventDefault to stop scrolling, snap-to-grid, and drop/end-drag behavior) is not visible in the provided truncated diff for the jigsaw component, so implementation cannot be confirmed from diff evidence alone.",
+      "id": "REQ-1",
+      "requirement": "Publish the current Valentine’s wish/Valentine’s Surprise project as a permanent (non-expiring) live site on the Internet Computer using the platform-provided default domain (no custom domain configuration).",
+      "reason": "The diff contains documentation asserting a live URL, but no evidence of actual deployment configuration/output or code changes that would accomplish a successful IC deployment; also no evidence of updating the backend live-URL comment mentioned in the BuildRequest constraint.",
       "evidence": [
-        "frontend/src/components/JigsawPuzzleName.tsx (truncated)"
+        "frontend/LIVE_URL.md",
+        "frontend/DEPLOYMENT.md",
+        "project_state.json"
       ]
     },
     {
-      "id": "REQ-20",
-      "requirement": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
-      "reason": "While PuzzleRevealSection still renders ValentineMessageReveal when isCompleted is true, the diff does not show the surrounding App-level completion wiring or confirm the revealed message copy was not modified (ValentineMessageReveal is not part of this diff). Therefore the full end-to-end completion/reveal behavior and unchanged message text cannot be conclusively verified from the diff summary alone.",
+      "id": "REQ-2",
+      "requirement": "If the deployment workflow requires specifying a domain/slug, generate and use a random valid slug that is 5–50 characters and contains only letters, numbers, and hyphens.",
+      "reason": "A slug is documented, but the diff provides no evidence it was generated randomly or actually used in an automated/successful deployment workflow (no deployment scripts/config changes or deployment logs shown).",
       "evidence": [
-        "frontend/src/components/PuzzleRevealSection.tsx",
-        "frontend-file-summaries.txt (mentions ValentineMessageReveal content but not as a diff)"
+        "frontend/LIVE_URL.md",
+        "frontend/DEPLOYMENT.md"
       ]
     }
   ],
-  "hallucinated_features": [],
-  "confidence": 0.56,
+  "hallucinated_features": [
+    {
+      "description": "Introduced/changed multiple frontend features and UI elements (jigsaw puzzle CTA/reveal flow, snowflake catching mini-game, floating hearts, sparkles/confetti, new styling/theme changes) despite the request being deployment-only with no feature changes.",
+      "reason": "BuildRequest explicitly states no feature changes; the diff includes a rewritten frontend feature inventory describing significant new interactive components and styling updates.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Added a comprehensive deployment runbook (DEPLOYMENT.md) with extensive instructions/troubleshooting beyond the requested scope of deploying the existing project and keeping URL references consistent.",
+      "reason": "The BuildRequest did not ask for new documentation/runbooks; it only required deployment and updating existing in-repo URL references via the existing feature mechanism.",
+      "evidence": [
+        "frontend/DEPLOYMENT.md"
+      ]
+    },
+    {
+      "description": "Updated project tracking/state to include new 'AR-*' items and to describe deployment as failing due to invalid domain format.",
+      "reason": "The BuildRequest did not request modifying internal project state/metadata; this is extra scope unrelated to executing the deployment itself.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.72,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/JigsawPuzzleName.tsx",
-    "frontend/src/components/PuzzleRevealSection.tsx",
+    "frontend/DEPLOYMENT.md",
+    "frontend/LIVE_URL.md",
     "project_state.json"
   ]
 }

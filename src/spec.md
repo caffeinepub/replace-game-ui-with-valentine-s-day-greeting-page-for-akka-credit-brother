@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Make the existing jigsaw puzzle playable on desktop and touch devices, and update the puzzle’s rendered text to exactly “Love you akka 💖” (removing any “Sushma 💝” text).
+**Goal:** Deploy the existing Valentine’s wish/Valentine’s Surprise site as a permanent live Internet Computer site using the default platform domain.
 
 **Planned changes:**
-- Update the puzzle’s internal rendered text/content to exactly: “Love you akka 💖”, ensuring “Sushma” does not appear anywhere in puzzle/game rendered output.
-- Fix puzzle input handling so pieces can be picked up, dragged, and dropped reliably on both mouse and touch (including preventing page scroll during drag in the puzzle area).
-- Preserve the existing completion behavior and the existing post-puzzle Valentine message reveal without changing its text.
+- Perform a production/live deployment of the current project to the Internet Computer.
+- Use the default `https://<slug>.icp0.io` domain; if a slug is required, generate a random valid slug (5–50 chars, only letters/numbers/hyphens).
+- Update in-repo references to the deployed live URL (frontend `LIVE_URL.md` and the live-URL comment in `backend/main.mo`) to match the new permanent URL.
 
-**User-visible outcome:** Users can complete the jigsaw puzzle end-to-end on desktop or mobile, and the puzzle displays “Love you akka 💖” with the same completion/reveal experience as before.
+**User-visible outcome:** The site is publicly reachable at an `https://<slug>.icp0.io` URL and serves the current project content without additional manual steps.

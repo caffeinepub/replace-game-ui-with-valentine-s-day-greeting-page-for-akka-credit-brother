@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-jigsaw-puzzle-s-internal-text-so-the-puzzle-content-renders-exactly-love-you-akka-and-does-not-render-sushma-anywhere-in-the-game",
-      "featureTitle": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
+      "featureId": "feature-publish-the-current-valentine-s-wish-valentine-s-surprise-project-as-a-permanent-non-expiring-live-site-on-the-internet-computer-using-the-platform-provided-default-domain-no-custom-domain-configuration",
+      "featureTitle": "Publish the current Valentine’s wish/Valentine’s Surprise project as a permanent (non-expiring) live site on the Internet Computer using the platform-provided default domain (no custom domain configuration).",
       "files": [
-        "frontend/src/components/JigsawPuzzleName.tsx"
+        "frontend/DEPLOYMENT.md",
+        "frontend/LIVE_URL.md"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,15 +16,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-18"
+        "REQ-1"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-fix-the-jigsaw-puzzle-interaction-so-it-is-playable-pieces-can-be-picked-up-dragged-and-dropped-reliably-on-both-desktop-and-touch-devices",
-      "featureTitle": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
+      "featureId": "feature-if-the-deployment-workflow-requires-specifying-a-domain-slug-generate-and-use-a-random-valid-slug-that-is-5-50-characters-and-contains-only-letters-numbers-and-hyphens",
+      "featureTitle": "If the deployment workflow requires specifying a domain/slug, generate and use a random valid slug that is 5–50 characters and contains only letters, numbers, and hyphens.",
       "files": [
-        "frontend/src/components/JigsawPuzzleName.tsx"
+        "frontend/DEPLOYMENT.md",
+        "frontend/LIVE_URL.md"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -33,25 +35,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-19"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-the-post-puzzle-experience-remains-unchanged-completing-the-puzzle-triggers-the-existing-completion-behavior-and-reveals-the-existing-valentine-message-after-completion-no-copy-changes-to-the-revealed-message",
-      "featureTitle": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
-      "files": [
-        "frontend/src/components/PuzzleRevealSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-20"
+        "REQ-2"
       ],
       "confidence": "high"
     }

@@ -1,58 +1,46 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Make the jigsaw puzzle playable and update puzzle text to “Love you akka 💖”",
+  "title": "Permanent Internet Computer deployment (default domain) for Valentine’s wish site",
   "requirements": [
     {
-      "id": "REQ-18",
-      "summary": "Replace the jigsaw puzzle’s rendered internal text with exactly “Love you akka 💖” and remove any “Sushma” occurrences from puzzle/game output.",
+      "id": "REQ-1",
+      "summary": "Ensure the current Valentine’s Surprise project is published as a permanent live site on the Internet Computer using the default icp0.io domain, and keep in-repo live URL references consistent.",
       "acceptanceCriteria": [
-        "The puzzle visual text rendered inside the jigsaw uses exactly: “Love you akka 💖”.",
-        "The string “Sushma” does not appear anywhere in the puzzle/game UI or code-driven rendered output."
+        "A production/live deployment is completed successfully (no deployment error).",
+        "The deployed site is reachable via an https://<slug>.icp0.io URL (default platform domain).",
+        "The live site serves the current project content without requiring further manual steps."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/JigsawPuzzleName.tsx",
+          "path": "frontend/DEPLOYMENT.md",
           "operation": "modify",
-          "description": "Update the PUZZLE_TEXT constant (and any other puzzle-rendered text sources if present) so the canvas-rendered puzzle text is exactly “Love you akka 💖”. Ensure “Sushma” is fully removed from this component so it cannot appear in code-driven rendered output."
-        }
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "summary": "Fix puzzle input handling to support reliable pick/drag/drop on both desktop and touch devices and prevent page scroll during interaction.",
-      "acceptanceCriteria": [
-        "On desktop: clicking/tapping a piece starts dragging it; moving the pointer moves the piece; releasing drops it and ends dragging.",
-        "On mobile/touch: touch drag works equivalently (no dependency on mouse-only events).",
-        "Dragging does not scroll the page while interacting with the canvas/puzzle area.",
-        "Dropping a piece near its correct slot snaps it into place as before.",
-        "Users can complete the puzzle end-to-end without getting stuck due to missing/failed input handling."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/JigsawPuzzleName.tsx",
-          "operation": "modify",
-          "description": "Replace mouse-only handlers with Pointer Events (onPointerDown/onPointerMove/onPointerUp/onPointerCancel) and implement pointer capture so dragging continues reliably even if the pointer leaves the canvas. Ensure interaction prevents default scrolling/gestures during drag (keep/strengthen touchAction: 'none' and call preventDefault where appropriate). Preserve existing snapping behavior and visual feedback while improving robustness on touch devices."
-        }
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "summary": "Preserve the existing post-completion behavior and Valentine message reveal content while keeping completion triggering reliable after input fixes.",
-      "acceptanceCriteria": [
-        "When the puzzle becomes fully completed, the completion callback fires and the message reveal section displays as it does currently.",
-        "The revealed Valentine message text remains exactly as currently implemented in the message reveal component (no edits to that message content)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/PuzzleRevealSection.tsx",
-          "operation": "modify",
-          "description": "Add a lightweight guard so the completion handler is only processed once per puzzle completion (to avoid duplicate triggers from input event sequencing changes). Do not change any revealed Valentine message copy; only ensure the existing reveal flow remains identical and stable."
+          "description": "Update the deployment guide to reflect the exact current, platform-default-domain permanent deployment workflow (no custom domain), explicitly referencing the repository’s deployment tooling (github-export-icp-cli) and emphasizing deployment-only work. Verify the component's usage instructions before implementing."
         },
         {
-          "path": "frontend/src/components/ValentineMessageReveal.tsx",
+          "path": "frontend/LIVE_URL.md",
           "operation": "modify",
-          "description": "Verify (and keep) the Valentine message reveal text exactly as-is; apply no copy changes. If any refactor is needed for compatibility with the puzzle completion guard, it must be non-functional and not alter displayed text."
+          "description": "Update the recorded permanent live URL and deployment details to match the newly deployed https://<slug>.icp0.io address after successful deployment, keeping the URL consistent across repo references per constraints (frontend doc side)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Support deployment workflows that require a slug by generating and using a random valid slug (5–50 chars; lowercase letters, numbers, hyphens).",
+      "acceptanceCriteria": [
+        "The chosen slug passes validation (length 5–50; only [a-z0-9-]).",
+        "Deployment succeeds using the generated slug without further user input."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Add a deployment-note section documenting the slug generation/validation rule (5–50 chars; only [a-z0-9-]) and how to apply it when the platform workflow prompts for a slug, without introducing any feature/UI changes. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/LIVE_URL.md",
+          "operation": "modify",
+          "description": "Ensure the final chosen slug is recorded in the deployment details section alongside the final permanent icp0.io URL so repo references remain consistent after deployment."
         }
       ]
     }

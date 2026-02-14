@@ -1,87 +1,57 @@
 {
   "kind": "build_request",
-  "title": "Make the jigsaw puzzle playable and update puzzle text to “Love you akka 💖”",
-  "priority": "high",
+  "title": "Deploy Valentine’s wish site to a permanent Internet Computer live URL",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-18",
-      "text": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
-      "target": "frontend",
+      "id": "REQ-1",
+      "text": "Publish the current Valentine’s wish/Valentine’s Surprise project as a permanent (non-expiring) live site on the Internet Computer using the platform-provided default domain (no custom domain configuration).",
+      "target": "unknown",
       "source": {
         "messageIds": [
           "recent-messages"
         ],
         "quotes": [
-          "Unable to play puzzle change the game  and replace sushma 💖 with Love you akka 💖",
-          "Change game only inside the game",
-          "Yes total correct make puzzle playable"
+          "Deploy",
+          "Publish",
+          "Make the website permanent"
         ]
       },
       "acceptanceCriteria": [
-        "The puzzle visual text rendered inside the jigsaw uses exactly: “Love you akka 💖”.",
-        "The string “Sushma” does not appear anywhere in the puzzle/game UI or code-driven rendered output."
+        "A production/live deployment is completed successfully (no deployment error).",
+        "The deployed site is reachable via an https://<slug>.icp0.io URL (default platform domain).",
+        "The live site serves the current project content without requiring further manual steps."
       ]
     },
     {
-      "id": "REQ-19",
-      "text": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
-      "target": "frontend",
+      "id": "REQ-2",
+      "text": "If the deployment workflow requires specifying a domain/slug, generate and use a random valid slug that is 5–50 characters and contains only letters, numbers, and hyphens.",
+      "target": "unknown",
       "source": {
         "messageIds": [
-          "recent-messages"
+          "project_state.json"
         ],
         "quotes": [
-          "Unable to play puzzle",
-          "Yes total correct make puzzle playable"
+          "If the deployment workflow requires specifying a domain/slug, generate and use a random valid slug that is 5–50 characters and contains only letters, numbers, and hyphens."
         ]
       },
       "acceptanceCriteria": [
-        "On desktop: clicking/tapping a piece starts dragging it; moving the pointer moves the piece; releasing drops it and ends dragging.",
-        "On mobile/touch: touch drag works equivalently (no dependency on mouse-only events).",
-        "Dragging does not scroll the page while interacting with the canvas/puzzle area.",
-        "Dropping a piece near its correct slot snaps it into place as before.",
-        "Users can complete the puzzle end-to-end without getting stuck due to missing/failed input handling."
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "text": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "recent-messages"
-        ],
-        "quotes": [
-          "On the site yes after the puzzle"
-        ]
-      },
-      "acceptanceCriteria": [
-        "When the puzzle becomes fully completed, the completion callback fires and the message reveal section displays as it does currently.",
-        "The revealed Valentine message text remains exactly as currently implemented in the message reveal component (no edits to that message content)."
+        "The chosen slug passes validation (length 5–50; only [a-z0-9-]).",
+        "Deployment succeeds using the generated slug without further user input."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Keep the backend as a single Motoko actor; do not introduce new backend services or external dependencies.",
-    "Do not route images through the backend; continue using static assets from frontend/public when needed."
+    "Use the default Internet Computer platform domain only; do not configure a custom domain.",
+    "Deploy the exact previously generated/current version of the project with no feature changes (deployment-only work).",
+    "After a successful deployment, keep in-repo references to the permanent live URL consistent with the newly deployed URL (handled by existing feature: update frontend/LIVE_URL.md and the live-URL comment in backend/main.mo)."
   ],
   "nonGoals": [
-    "Do not change the main page greeting, header title, footer credit, or overall Valentine theme styling beyond what is necessary to make the puzzle playable.",
-    "Do not add a new game type; keep it as the same jigsaw-style puzzle (only fix playability and change the puzzle text)."
+    "Add new site features, games, or UI changes unrelated to making deployment succeed.",
+    "Set up third-party hosting, external databases, or non-Internet-Computer deployment targets."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

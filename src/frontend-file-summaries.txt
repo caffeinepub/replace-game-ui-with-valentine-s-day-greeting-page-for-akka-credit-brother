@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component displaying Valentine's Day greeting \"Happy Valentine's Day Akka 💝\" with heart CTA button that toggles an on-page jigsaw puzzle, and conditionally renders the full Valentine message after puzzle completion.",
+  "frontend/src/components/Header.tsx": "Header component displaying \"Happy Valentine's Day Akka 💝\" with animated heart icons and Valentine-themed styling.",
+  "frontend/src/components/Footer.tsx": "Footer component showing only \"Credits: Brother\" with no caffeine.ai attribution.",
+  "frontend/src/components/Snowfall.tsx": "Component that generates and animates 50 falling snowflakes across the screen using the provided snowflake asset.",
+  "frontend/src/components/CoolingFan.tsx": "Animated cooling fan component that spins at variable speeds with glow effects and wind animation lines when active.",
+  "frontend/src/index.css": "Global styles featuring warm Valentine OKLCH color system with new animations for puzzle reveal, message reveal, sparkle burst, and heart confetti effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom Valentine color palette tokens (pink/rose/cream theme) replacing the previous frost colors.",
+  "frontend/src/components/SnowflakeGame.tsx": "Canvas-based mini-game component where players catch falling snowflakes using keyboard or mouse controls, featuring a 30-second timer, score tracking, and game over screen with play again functionality.",
+  "frontend/index.html": "HTML entry point with updated title \"Happy Valentine's Day Akka 💝\".",
+  "frontend/src/components/FloatingHearts.tsx": "Component that generates and animates 15 floating hearts across the screen using the generated heart asset with random positions, durations, and drift effects.",
+  "frontend/src/components/HeartPuzzleCTA.tsx": "Heart-shaped call-to-action button component that toggles puzzle visibility with animated hover/active states and scale transitions.",
+  "frontend/src/components/PuzzleRevealSection.tsx": "On-page section component that expands/collapses to show the jigsaw puzzle game with a completion guard to prevent duplicate triggers, then reveals the Valentine message with celebration effects.",
+  "frontend/src/components/JigsawPuzzleName.tsx": "Interactive canvas-based jigsaw puzzle game that renders \"Love you akka 💖\" split into draggable pieces with texture overlay, using Pointer Events for reliable touch and desktop support, pointer capture for robust dragging, snap-to-grid functionality, and completion detection with duplicate-trigger guard.",
+  "frontend/src/components/ValentineMessageReveal.tsx": "Animated message reveal component that displays the full Valentine message \"To my Sister, Happy Valentine's Day! Every day with you is a gift, and Lucky to have you in my life, I cherish our connection. May our bond continue to grow stronger, forever unbroken💖\" with fade-in and scale animations.",
+  "frontend/src/components/CelebrationSparkles.tsx": "Celebratory overlay component that generates animated sparkle particles and heart confetti using static assets with pointer-events: none to avoid blocking interactions."
+}

@@ -1,0 +1,87 @@
+{
+  "kind": "build_request",
+  "title": "Make the jigsaw puzzle playable and update puzzle text to “Love you akka 💖”",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-18",
+      "text": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Unable to play puzzle change the game  and replace sushma 💖 with Love you akka 💖",
+          "Change game only inside the game",
+          "Yes total correct make puzzle playable"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The puzzle visual text rendered inside the jigsaw uses exactly: “Love you akka 💖”.",
+        "The string “Sushma” does not appear anywhere in the puzzle/game UI or code-driven rendered output."
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Unable to play puzzle",
+          "Yes total correct make puzzle playable"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop: clicking/tapping a piece starts dragging it; moving the pointer moves the piece; releasing drops it and ends dragging.",
+        "On mobile/touch: touch drag works equivalently (no dependency on mouse-only events).",
+        "Dragging does not scroll the page while interacting with the canvas/puzzle area.",
+        "Dropping a piece near its correct slot snaps it into place as before.",
+        "Users can complete the puzzle end-to-end without getting stuck due to missing/failed input handling."
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "On the site yes after the puzzle"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the puzzle becomes fully completed, the completion callback fires and the message reveal section displays as it does currently.",
+        "The revealed Valentine message text remains exactly as currently implemented in the message reveal component (no edits to that message content)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep the backend as a single Motoko actor; do not introduce new backend services or external dependencies.",
+    "Do not route images through the backend; continue using static assets from frontend/public when needed."
+  ],
+  "nonGoals": [
+    "Do not change the main page greeting, header title, footer credit, or overall Valentine theme styling beyond what is necessary to make the puzzle playable.",
+    "Do not add a new game type; keep it as the same jigsaw-style puzzle (only fix playability and change the puzzle text)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

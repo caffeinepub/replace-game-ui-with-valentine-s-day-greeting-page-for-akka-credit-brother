@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Valentine’s Day greeting website with a generic/\"Akka\" main greeting (\"Happy Valentine’s Day Akka 💝\"), a heart button that reveals an on-page jigsaw puzzle where ONLY the puzzle shows the text “Love you akka 💖” (replacing any “Sushma 💝”), and upon completion reveals a longer Valentine message that starts only with “To my Sister”, enhanced with special animations/effects.",
+  "architectural_notes": [
+    "Puzzle/game content text must be exactly “Love you akka 💖”; do not use “Sushma 💝” anywhere (including inside the puzzle)."
+  ],
+  "known_issues": [
+    "Jigsaw puzzle is currently not playable for the user (needs fix)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-replace-the-current-game-centric-home-page-with-a-simple-valentine-s-day-greeting-page-addressed-to-akka-prominently-showing-the-message-i-am-lucky-to-have-you-in-my-life",
+      "title": "Replace the current game-centric home page with a simple Valentine’s Day greeting page addressed to “Akka”, prominently showing the message “I am lucky to have you in my life.”",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-content-to-match-the-valentine-s-day-greeting-theme-remove-cool-my-sister-branding-and-any-snowflake-specific-wording-icons-that-conflict-with-the-valentine-theme",
+      "title": "Update the header content to match the Valentine’s Day greeting theme (remove “Cool My Sister” branding and any snowflake-specific wording/icons that conflict with the Valentine theme).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-footer-credit-to-read-exactly-credits-brother",
+      "title": "Update the footer credit to read exactly “Credits: Brother”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-valentine-visual-theme-across-the-site-e-g-warm-pink-red-palette-romantic-typography-choices-soft-gradients-subtle-heart-accents-and-ensure-it-is-used-consistently-across-header-main-content-and-footer-do-not-use-a-blue-purple-dominant-theme",
+      "title": "Apply a cohesive Valentine visual theme across the site (e.g., warm pink/red palette, romantic typography choices, soft gradients, subtle heart accents) and ensure it is used consistently across header, main content, and footer (do not use a blue/purple-dominant theme).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-base-html-document-title-to-reflect-the-valentine-greeting-replace-the-current-cool-my-sister-animated-website-title",
+      "title": "Update the base HTML document title to reflect the Valentine greeting (replace the current “Cool My Sister   Animated Website” title).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-subtle-floating-heart-visual-effect-layer-using-generated-static-assets-similar-to-the-existing-snowfall-concept-and-ensure-it-does-not-block-interaction-with-the-page-content",
+      "title": "Add a subtle floating-heart visual effect layer using generated static assets (similar to the existing snowfall concept), and ensure it does not block interaction with the page content.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-to-frontend-public-assets-generated-and-use-them-directly-from-the-frontend-do-not-route-images-through-the-backend",
+      "title": "Add the required generated images to `frontend/public/assets/generated` and use them directly from the frontend (do not route images through the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-user-facing-copy-to-use-the-recipient-name-sushma-instead-of-akka-wherever-it-appears-main-title-header-greeting-and-document-title",
+      "title": "Update all user-facing copy to use the recipient name “Sushma 💝” instead of “Akka” wherever it appears (main title, header greeting, and document title).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-heart-shaped-call-to-action-button-positioned-above-the-main-title-that-when-clicked-reveals-an-on-page-jigsaw-puzzle-section-no-navigation-away-from-the-page",
+      "title": "Add a heart-shaped call-to-action button positioned above the main title that, when clicked, reveals an on-page jigsaw puzzle section (no navigation away from the page).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-jigsaw-puzzle-game-whose-content-is-the-text-sushma-the-puzzle-should-visually-form-this-text-when-solved",
+      "title": "Implement a jigsaw puzzle game whose content is the text “Sushma 💝” (the puzzle should visually form this text when solved).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-keep-the-full-valentine-message-hidden-until-the-jigsaw-puzzle-is-completed-upon-completion-reveal-exactly-this-message-to-my-sister-happy-valentine-s-day-every-day-with-you-is-a-gift-and-lucky-to-have-you-in-my-life-i-cherish-our-connection-may-our-bond-continue-to-grow-stronger-forever-unbroken",
+      "title": "Keep the full Valentine message hidden until the jigsaw puzzle is completed; upon completion, reveal exactly this message: \"To my Sister, Happy Valentine's Day! Every day with you is a gift, and Lucky to have you in my life,I cherish our connection. May our bond continue to grow stronger, forever unbroken💖\"",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-additional-valentine-themed-animations-effects-to-make-the-experience-feel-special-including-at-minimum-an-animated-puzzle-reveal-transition-when-the-heart-button-is-clicked-and-a-celebratory-animation-when-the-puzzle-is-completed-without-interfering-with-page-interaction",
+      "title": "Add additional Valentine-themed animations/effects to make the experience feel special, including (at minimum) an animated puzzle reveal transition when the heart button is clicked and a celebratory animation when the puzzle is completed, without interfering with page interaction.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-main-greeting-area-copy-so-that-the-name-sushma-does-not-appear-anywhere-in-the-main-page-content-and-the-main-title-reads-exactly-happy-valentine-s-day-akka",
+      "title": "Update the main greeting area copy so that the name “Sushma 💝” does not appear anywhere in the main page content, and the main title reads exactly: “Happy Valentine’s Day Akka 💝”.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-text-so-it-does-not-contain-sushma-the-name-sushma-must-appear-only-inside-the-jigsaw-puzzle-content",
+      "title": "Update the header text so it does not contain “Sushma 💝” (the name “Sushma 💝” must appear only inside the jigsaw puzzle content).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-base-html-document-title-so-it-does-not-contain-sushma-and-instead-reflects-the-updated-main-greeting-use-happy-valentine-s-day-akka",
+      "title": "Update the base HTML document title so it does not contain “Sushma 💝” and instead reflects the updated main greeting (use: “Happy Valentine’s Day Akka 💝”).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-jigsaw-puzzle-remains-the-only-place-where-the-name-sushma-appears-keep-the-puzzle-content-as-sushma",
+      "title": "Ensure the jigsaw puzzle remains the only place where the name “Sushma 💝” appears (keep the puzzle content as “Sushma 💝”).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-built-with-caffeine-ai-caffeine-ai-footer-credit-entirely-including-any-link-utm-referral-keep-the-footer-credit-line-credits-brother",
+      "title": "Remove the “built with caffeine ai” / “caffeine.ai” footer credit entirely (including any link/UTM referral). Keep the footer credit line “Credits: Brother”.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-jigsaw-puzzle-s-internal-text-so-the-puzzle-content-renders-exactly-love-you-akka-and-does-not-render-sushma-anywhere-in-the-game",
+      "title": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-jigsaw-puzzle-interaction-so-it-is-playable-pieces-can-be-picked-up-dragged-and-dropped-reliably-on-both-desktop-and-touch-devices",
+      "title": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-post-puzzle-experience-remains-unchanged-completing-the-puzzle-triggers-the-existing-completion-behavior-and-reveals-the-existing-valentine-message-after-completion-no-copy-changes-to-the-revealed-message",
+      "title": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a simple Valentine’s Day website wishing Akka, including the message \"I am lucky to have you in my life\" and a credit line \"Brother\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add a heart button near the main title that, when clicked, reveals an on-page jigsaw puzzle (no navigation away).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Hide the Valentine message until the jigsaw puzzle is completed, then reveal the full message: \"To my Sister, Happy Valentine's Day! Every day with you is a gift, and Lucky to have you in my life,I cherish our connection. May our bond continue to grow stronger, forever unbroken💖\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add special Valentine-themed animations/effects to make the experience feel more impressive and special (in addition to existing subtle floating hearts).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Remove the “built with caffeine ai” credit/footer text entirely.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Update the jigsaw puzzle content text to exactly “Love you akka 💖”, removing/replacing “Sushma 💝” from the game content.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Fix the jigsaw puzzle so it is playable (user currently unable to play).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Replace game UI with Valentine’s Day greeting page for Akka (credit: Brother)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

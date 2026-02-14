@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Valentine color palette - Light mode */
+        --background: 0.97 0.02 15;
+        --foreground: 0.25 0.05 15;
+        --card: 0.98 0.01 15;
+        --card-foreground: 0.25 0.05 15;
+        --popover: 0.98 0.01 15;
+        --popover-foreground: 0.25 0.05 15;
+        --primary: 0.65 0.18 10;
+        --primary-foreground: 0.98 0.01 15;
+        --secondary: 0.88 0.03 20;
+        --secondary-foreground: 0.25 0.05 15;
+        --muted: 0.90 0.02 15;
+        --muted-foreground: 0.50 0.05 15;
+        --accent: 0.70 0.20 355;
+        --accent-foreground: 0.98 0.01 15;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.85 0.05 15;
+        --input: 0.85 0.05 15;
+        --ring: 0.70 0.15 355;
+        
+        /* Custom Valentine colors */
+        --valentine-bg: 0.95 0.03 15;
+        --valentine-text: 0.30 0.08 10;
+        --valentine-light: 0.55 0.08 355;
+        --valentine-dark: 0.40 0.12 10;
+        --valentine-accent: 0.65 0.22 355;
+        --valentine-bright: 0.75 0.24 350;
+        --valentine-border: 0.80 0.08 15;
+        --valentine-cream: 0.92 0.04 30;
+    }
+
+    .dark {
+        --background: 0.20 0.05 15;
+        --foreground: 0.95 0.02 15;
+        --card: 0.25 0.06 15;
+        --card-foreground: 0.95 0.02 15;
+        --popover: 0.23 0.06 15;
+        --popover-foreground: 0.95 0.02 15;
+        --primary: 0.70 0.20 355;
+        --primary-foreground: 0.20 0.05 15;
+        --secondary: 0.30 0.08 15;
+        --secondary-foreground: 0.95 0.02 15;
+        --muted: 0.30 0.08 15;
+        --muted-foreground: 0.65 0.08 15;
+        --accent: 0.65 0.22 355;
+        --accent-foreground: 0.95 0.02 15;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.95 0.02 15;
+        --border: 0.35 0.10 15;
+        --input: 0.35 0.10 15;
+        --ring: 0.60 0.15 355;
+        
+        /* Custom Valentine colors - dark mode */
+        --valentine-bg: 0.23 0.06 15;
+        --valentine-text: 0.90 0.03 15;
+        --valentine-light: 0.70 0.08 355;
+        --valentine-dark: 0.18 0.08 10;
+        --valentine-accent: 0.70 0.24 355;
+        --valentine-bright: 0.80 0.26 350;
+        --valentine-border: 0.40 0.12 15;
+        --valentine-cream: 0.85 0.04 30;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-gradient-to-br from-valentine-bg via-background to-valentine-cream text-foreground;
+        background-attachment: fixed;
+    }
+}
+
+@layer utilities {
+    /* Valentine text effect */
+    .valentine-text {
+        text-shadow: 
+            0 0 10px oklch(var(--valentine-bright) / 0.4),
+            0 0 20px oklch(var(--valentine-accent) / 0.3),
+            0 0 30px oklch(var(--valentine-accent) / 0.2);
+        background: linear-gradient(
+            135deg,
+            oklch(var(--valentine-text)),
+            oklch(var(--valentine-accent)),
+            oklch(var(--valentine-bright))
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* Valentine card effect */
+    .valentine-card {
+        background: oklch(var(--valentine-cream) / 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid oklch(var(--valentine-border) / 0.4);
+        box-shadow: 
+            0 4px 6px oklch(var(--valentine-dark) / 0.1),
+            inset 0 1px 0 oklch(var(--valentine-bright) / 0.2);
+    }
+    
+    /* Shadow effect */
+    .shadow-valentine {
+        box-shadow: 
+            0 10px 25px oklch(var(--valentine-accent) / 0.3),
+            0 0 40px oklch(var(--valentine-bright) / 0.2);
+    }
+}
+
+@layer components {
+    /* Floating hearts animation */
+    @keyframes float-hearts {
+        0% {
+            transform: translateY(100vh) translateX(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(-100px) translateX(var(--drift)) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    .animate-float-hearts {
+        animation: float-hearts linear infinite;
+    }
+    
+    /* Gentle float animation */
+    @keyframes gentle-float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    
+    .animate-gentle-float {
+        animation: gentle-float 4s ease-in-out infinite;
+    }
+    
+    /* Pulse glow */
+    @keyframes pulse-glow {
+        0%, 100% {
+            opacity: 1;
+            filter: drop-shadow(0 0 8px oklch(var(--valentine-accent) / 0.6));
+        }
+        50% {
+            opacity: 0.8;
+            filter: drop-shadow(0 0 20px oklch(var(--valentine-bright) / 0.8));
+        }
+    }
+    
+    .animate-pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    /* Puzzle reveal animation */
+    @keyframes puzzle-reveal {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    .animate-puzzle-reveal {
+        animation: puzzle-reveal 0.6s ease-out forwards;
+    }
+    
+    /* Message reveal animation */
+    @keyframes message-reveal {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    .animate-message-reveal {
+        animation: message-reveal 1s ease-out forwards;
+    }
+    
+    /* Sparkle burst animation */
+    @keyframes sparkle-burst {
+        0% {
+            opacity: 0;
+            transform: scale(0) rotate(0deg);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.5) rotate(180deg);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.5) rotate(360deg);
+        }
+    }
+    
+    .animate-sparkle-burst {
+        animation: sparkle-burst ease-out forwards;
+        pointer-events: none;
+    }
+    
+    /* Heart confetti animation */
+    @keyframes heart-confetti {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+        }
+    }
+    
+    .animate-heart-confetti {
+        animation: heart-confetti ease-in forwards;
+        pointer-events: none;
+    }
+    
+    /* Fade in animation */
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+    }
+}

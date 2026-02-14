@@ -1,0 +1,61 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T02:42:38.743Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-18",
+        "summary": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/JigsawPuzzleName.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/JigsawPuzzleName.tsx"
+        ]
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/JigsawPuzzleName.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/JigsawPuzzleName.tsx"
+        ]
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/PuzzleRevealSection.tsx",
+          "frontend/src/components/ValentineMessageReveal.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/PuzzleRevealSection.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/JigsawPuzzleName.tsx",
+    "frontend/src/components/PuzzleRevealSection.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

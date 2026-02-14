@@ -1,2 +1,3 @@
-# replace-game-ui-with-valentine-s-day-greeting-page-for-akka-credit-brother
-Exported from Caffeine project: Replace game UI with Valentine’s Day greeting page for Akka (credit: Brother)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

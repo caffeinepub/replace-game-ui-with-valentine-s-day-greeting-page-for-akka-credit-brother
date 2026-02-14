@@ -1,0 +1,59 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-jigsaw-puzzle-s-internal-text-so-the-puzzle-content-renders-exactly-love-you-akka-and-does-not-render-sushma-anywhere-in-the-game",
+      "featureTitle": "Update the jigsaw puzzle’s internal text so the puzzle content renders exactly “Love you akka 💖” (and does not render “Sushma 💝” anywhere in the game).",
+      "files": [
+        "frontend/src/components/JigsawPuzzleName.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-fix-the-jigsaw-puzzle-interaction-so-it-is-playable-pieces-can-be-picked-up-dragged-and-dropped-reliably-on-both-desktop-and-touch-devices",
+      "featureTitle": "Fix the jigsaw puzzle interaction so it is playable (pieces can be picked up, dragged, and dropped reliably) on both desktop and touch devices.",
+      "files": [
+        "frontend/src/components/JigsawPuzzleName.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-post-puzzle-experience-remains-unchanged-completing-the-puzzle-triggers-the-existing-completion-behavior-and-reveals-the-existing-valentine-message-after-completion-no-copy-changes-to-the-revealed-message",
+      "featureTitle": "Ensure the post-puzzle experience remains unchanged: completing the puzzle triggers the existing completion behavior and reveals the existing Valentine message after completion (no copy changes to the revealed message).",
+      "files": [
+        "frontend/src/components/PuzzleRevealSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
